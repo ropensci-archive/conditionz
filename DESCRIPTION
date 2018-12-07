@@ -1,0 +1,22 @@
+Package: conditionz
+Title: Condition Control
+Description: Condition control.
+Version: 0.0.1.9100
+Authors@R: c(
+    person("Scott", "Chamberlain",
+        role = c("aut", "cre"),
+        email = "myrmecocystus@gmail.com",
+        comment = c(ORCID = "orcid.org/0000-0003-1444-9135")))
+License: MIT + file LICENSE
+URL: https://github.com/ropenscilabs/conditionz
+BugReports: http://github.com/ropenscilabs/conditionz/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends:
+    R(>= 3.2.1)
+Imports:
+    R6,
+    uuid
+Suggests:
+    testthat
+RoxygenNote: 6.1.1
