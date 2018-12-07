@@ -32,16 +32,16 @@ how many times, etc.
 x <- ConditionKeeper$new(times = 4)
 x
 #> ConditionKeeper
-#>  id: bd123de2-13e5-4e1b-832f-55a6b621a736
+#>  id: 225f4ef2-c81b-4d1e-aca7-387cb0ffe400
 #>  times: 4
 #>  messages: 0
 x$get_id()
-#> [1] "bd123de2-13e5-4e1b-832f-55a6b621a736"
+#> [1] "225f4ef2-c81b-4d1e-aca7-387cb0ffe400"
 x$add("one")
 x$add("two")
 x
 #> ConditionKeeper
-#>  id: bd123de2-13e5-4e1b-832f-55a6b621a736
+#>  id: 225f4ef2-c81b-4d1e-aca7-387cb0ffe400
 #>  times: 4
 #>  messages: 2
 #>   one  two
@@ -99,7 +99,7 @@ foo(1:10)
 #>  [1]   1   4   9  16  25  36  49  64  81 100
 ```
 
-Wrapping in `conditionz::handle_conditions()` allows you to control how many messages
+Using in `ConditionKeeper` allows you to control how many messages
 are thrown
 
 
@@ -134,8 +134,8 @@ microbenchmark::microbenchmark(
 )
 #> Unit: microseconds
 #>             expr      min       lq     mean   median       uq      max
-#>           normal  900.007  980.363 1381.790 1353.585 1669.690 4360.756
-#>  with_conditionz 2007.854 2433.633 3005.054 3044.824 3486.887 5716.751
+#>           normal  891.896  922.045 1090.897  958.394 1171.738 4560.807
+#>  with_conditionz 1962.477 2033.447 2288.819 2110.113 2417.100 3974.610
 #>  neval
 #>    100
 #>    100

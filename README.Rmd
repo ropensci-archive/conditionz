@@ -76,7 +76,7 @@ Running the function normally throws many messages
 foo(1:10)
 ```
 
-Wrapping in `conditionz::handle_conditions()` allows you to control how many messages
+Using in `ConditionKeeper` allows you to control how many messages
 are thrown
 
 ```{r}
