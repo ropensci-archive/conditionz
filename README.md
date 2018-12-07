@@ -148,4 +148,4 @@ microbenchmark::microbenchmark(
 * Get citation information for `conditionz` in R doing `citation(package = 'conditionz')`
 * Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-[![rofooter](https://ropensci.com/public_images/github_footer.png)](https://ropensci.com)
+[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
