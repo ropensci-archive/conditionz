@@ -42,5 +42,18 @@ x$add("two")
 x$thrown_times("two")
 x$thrown_enough("two")
 x$thrown_enough("one")
+
+foo <- function(x) {
+  message("you gave: ", x)
+  return(x)
+}
+foo('a')
+x$handle_conditions(foo('a'))
+
+x <- ConditionKeeper$new(times = 4, condition = "warning")
+x
+x$add("one")
+x$add("two")
+x
 }
 \keyword{datasets}

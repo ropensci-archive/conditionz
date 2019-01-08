@@ -27,17 +27,32 @@ conditonz_env <- new.env()
 #' }
 #' bar(1:5)
 #' handle_conditions(bar(1:5))
+#' 
+#' handle_messages(foo('a'))
+#' 
+#' hello <- function(x) {
+#'   warning("you gave: ", x)
+#'   return(x)
+#' }
+#' handle_warnings(hello('a'))
 handle_conditions <- function(expr, condition = "message", times = 1) {
-  cond_keep <- ConditionKeeper$new(times = times)
+  if (!condition %in% c("message", "warning")) {
+    stop("'condition' must be one of 'message' or 'warning'", 
+      call. = FALSE)
+  }
+  cond_keep <- ConditionKeeper$new(times = times, condition = condition)
   assign(cond_keep$get_id(), cond_keep, envir = conditonz_env)
-  # cond_keep <- ConditionKeeper$new(times = times)
   on.exit(cond_keep$purge())
   res <- capture_x(condition)(expr)
   if (!is.null(res$text)) {
-    txt <- res$text[[1]][condition]
+    txt <- res$text[[1]][['message']]
     if (!cond_keep$thrown_enough(txt)) {
       cond_keep$add(txt)
-      eval(parse(text=condition))(txt)
+      switch(
+        condition,
+        message = eval(parse(text=condition))(txt),
+        warning = eval(parse(text=condition))(txt, call. = FALSE)
+      )
     }
   }
   return(res$value)
@@ -46,14 +61,14 @@ handle_conditions <- function(expr, condition = "message", times = 1) {
 
 #' @export
 #' @rdname handle_conditions
-handle_messages <- function(expr) {
-  handle_conditions(expr, "message")
+handle_messages <- function(expr, times = 1) {
+  handle_conditions(expr, "message", times = times)
 }
 
 #' @export
 #' @rdname handle_conditions
-handle_warnings <- function(expr) {
-  handle_conditions(expr, "warning")
+handle_warnings <- function(expr, times = 1) {
+  handle_conditions(expr, "warning", times = times)
 }
 
 # helpers ------

@@ -35,6 +35,19 @@
 #' x$thrown_times("two")
 #' x$thrown_enough("two")
 #' x$thrown_enough("one")
+#' 
+#' foo <- function(x) {
+#'   message("you gave: ", x)
+#'   return(x)
+#' }
+#' foo('a')
+#' x$handle_conditions(foo('a'))
+#' 
+#' x <- ConditionKeeper$new(times = 4, condition = "warning")
+#' x
+#' x$add("one")
+#' x$add("two")
+#' x
 ConditionKeeper <- R6::R6Class("ConditionKeeper",
   public = list(
     bucket = NULL,
@@ -46,6 +59,10 @@ ConditionKeeper <- R6::R6Class("ConditionKeeper",
       self$times <- times
 
       assert(condition, "character")
+      if (!condition %in% c("message", "warning")) {
+        stop("'condition' must be one of 'message' or 'warning'", 
+          call. = FALSE)
+      }
       self$condition <- condition
 
       # assign unique id to the class object
@@ -94,10 +111,15 @@ ConditionKeeper <- R6::R6Class("ConditionKeeper",
     handle_conditions = function(expr) {
       res <- capture_x(self$condition)(expr)
       if (!is.null(res$text)) {
-        txt <- res$text[[1]][[self$condition]]
+        txt <- res$text[[1]][['message']]
         if (!self$thrown_enough(txt)) {
           self$add(txt)
-          eval(parse(text = self$condition))(txt)
+          # eval(parse(text = self$condition))(txt)
+          switch(
+            self$condition,
+            message = eval(parse(text=self$condition))(txt),
+            warning = eval(parse(text=self$condition))(txt, call. = FALSE)
+          )
         }
       }
       return(res$value)

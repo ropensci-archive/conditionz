@@ -8,6 +8,15 @@ conditionz
 
 control how many times conditions are thrown
 
+Package API:
+
+ - `handle_messages`
+ - `handle_conditions`
+ - `ConditionKeeper`
+ - `handle_warnings`
+ - `capture_message`
+ - `capture_warning`
+
 ## Installation
 
 
@@ -32,16 +41,16 @@ how many times, etc.
 x <- ConditionKeeper$new(times = 4)
 x
 #> ConditionKeeper
-#>  id: 225f4ef2-c81b-4d1e-aca7-387cb0ffe400
+#>  id: b771c5c2-5b8d-4a01-901f-1d7d91163dcf
 #>  times: 4
 #>  messages: 0
 x$get_id()
-#> [1] "225f4ef2-c81b-4d1e-aca7-387cb0ffe400"
+#> [1] "b771c5c2-5b8d-4a01-901f-1d7d91163dcf"
 x$add("one")
 x$add("two")
 x
 #> ConditionKeeper
-#>  id: 225f4ef2-c81b-4d1e-aca7-387cb0ffe400
+#>  id: b771c5c2-5b8d-4a01-901f-1d7d91163dcf
 #>  times: 4
 #>  messages: 2
 #>   one  two
@@ -133,9 +142,9 @@ microbenchmark::microbenchmark(
   times = 100
 )
 #> Unit: microseconds
-#>             expr      min       lq     mean   median       uq      max
-#>           normal  891.896  922.045 1090.897  958.394 1171.738 4560.807
-#>  with_conditionz 1962.477 2033.447 2288.819 2110.113 2417.100 3974.610
+#>             expr      min        lq      mean    median       uq      max
+#>           normal  858.669  892.3975  989.7555  909.3675 1059.578 2945.132
+#>  with_conditionz 1917.132 1954.1705 2120.2991 1988.1675 2220.528 3347.782
 #>  neval
 #>    100
 #>    100

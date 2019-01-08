@@ -13,6 +13,12 @@ knitr::opts_chunk$set(
 
 control how many times conditions are thrown
 
+Package API:
+
+```{r echo=FALSE, comment=NA, results="asis"}
+cat(paste(" -", paste(sprintf("`%s`", getNamespaceExports("conditionz")), collapse = "\n - ")))
+```
+
 ## Installation
 
 ```{r eval=FALSE}

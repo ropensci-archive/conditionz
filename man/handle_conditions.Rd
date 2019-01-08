@@ -8,9 +8,9 @@
 \usage{
 handle_conditions(expr, condition = "message", times = 1)
 
-handle_messages(expr)
+handle_messages(expr, times = 1)
 
-handle_warnings(expr)
+handle_warnings(expr, times = 1)
 }
 \arguments{
 \item{expr}{an expression}
@@ -44,4 +44,12 @@ bar <- function(x) {
 }
 bar(1:5)
 handle_conditions(bar(1:5))
+
+handle_messages(foo('a'))
+
+hello <- function(x) {
+  warning("you gave: ", x)
+  return(x)
+}
+handle_warnings(hello('a'))
 }
