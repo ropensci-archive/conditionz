@@ -35,6 +35,13 @@ conditonz_env <- new.env()
 #'   return(x)
 #' }
 #' handle_warnings(hello('a'))
+#' 
+#' # code block
+#' handle_warnings({
+#'   as.numeric(letters[1:3])
+#'   as.numeric(letters[4:6])
+#'   as.numeric(letters[7:9])
+#' })
 handle_conditions <- function(expr, condition = "message", times = 1) {
   if (!condition %in% c("message", "warning")) {
     stop("'condition' must be one of 'message' or 'warning'", 

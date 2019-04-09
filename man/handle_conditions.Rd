@@ -52,4 +52,11 @@ hello <- function(x) {
   return(x)
 }
 handle_warnings(hello('a'))
+
+# code block
+handle_warnings({
+  as.numeric(letters[1:3])
+  as.numeric(letters[4:6])
+  as.numeric(letters[7:9])
+})
 }
