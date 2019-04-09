@@ -17,6 +17,15 @@ Package API:
  - `capture_message`
  - `capture_warning`
 
+How to use functions:
+
+- `ConditionKeeper` is what you want to use if you want to keep track of conditions inside a
+function being applied many times, either in a for loop or lapply style fashion.
+- `handle_conditions`/`handle_messages`/`handle_warnings` is what you want to use if the multiple
+conditions are happening within a single function or code block
+- `capture_message`/`capture_warning` are meant for capturing messages/warnings into a useable
+list
+
 ## Installation
 
 
@@ -32,7 +41,7 @@ library("conditionz")
 
 ## ConditionKeeper
 
-`ConditionKeeper` is the internal R6 class that handles keeping track of 
+`ConditionKeeper` is the internal R6 class that handles keeping track of
 conditions and lets us determine if conditions have been encountered,
 how many times, etc.
 
@@ -41,16 +50,16 @@ how many times, etc.
 x <- ConditionKeeper$new(times = 4)
 x
 #> ConditionKeeper
-#>  id: b771c5c2-5b8d-4a01-901f-1d7d91163dcf
+#>  id: a2394c42-e64e-4940-be84-ae7846c8efe4
 #>  times: 4
 #>  messages: 0
 x$get_id()
-#> [1] "b771c5c2-5b8d-4a01-901f-1d7d91163dcf"
+#> [1] "a2394c42-e64e-4940-be84-ae7846c8efe4"
 x$add("one")
 x$add("two")
 x
 #> ConditionKeeper
-#>  id: b771c5c2-5b8d-4a01-901f-1d7d91163dcf
+#>  id: a2394c42-e64e-4940-be84-ae7846c8efe4
 #>  times: 4
 #>  messages: 2
 #>   one  two
@@ -142,9 +151,9 @@ microbenchmark::microbenchmark(
   times = 100
 )
 #> Unit: microseconds
-#>             expr      min        lq      mean    median       uq      max
-#>           normal  858.669  892.3975  989.7555  909.3675 1059.578 2945.132
-#>  with_conditionz 1917.132 1954.1705 2120.2991 1988.1675 2220.528 3347.782
+#>             expr      min        lq     mean   median       uq      max
+#>           normal  860.100  888.5415 1009.006  912.363 1038.207 2603.847
+#>  with_conditionz 1912.941 1960.9415 2162.903 2034.829 2228.555 4788.610
 #>  neval
 #>    100
 #>    100
