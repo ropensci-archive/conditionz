@@ -1,7 +1,9 @@
 Package: conditionz
-Title: Condition Control
-Description: Condition control.
-Version: 0.0.2.9100
+Title: Control How Many Times Conditions Are Thrown
+Description: Provides ability to control how many times in an R session
+    conditions are shown to the user. Includes warnings, messages, and
+    errors.
+Version: 0.0.3.9100
 Authors@R: c(
     person("Scott", "Chamberlain",
         role = c("aut", "cre"),

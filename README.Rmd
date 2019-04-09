@@ -19,6 +19,15 @@ Package API:
 cat(paste(" -", paste(sprintf("`%s`", getNamespaceExports("conditionz")), collapse = "\n - ")))
 ```
 
+How to use functions:
+
+- `ConditionKeeper` is what you want to use if you want to keep track of conditions inside a
+function being applied many times, either in a for loop or lapply style fashion.
+- `handle_conditions`/`handle_messages`/`handle_warnings` is what you want to use if the multiple
+conditions are happening within a single function or code block
+- `capture_message`/`capture_warning` are meant for capturing messages/warnings into a useable
+list
+
 ## Installation
 
 ```{r eval=FALSE}
@@ -32,7 +41,7 @@ library("conditionz")
 
 ## ConditionKeeper
 
-`ConditionKeeper` is the internal R6 class that handles keeping track of 
+`ConditionKeeper` is the internal R6 class that handles keeping track of
 conditions and lets us determine if conditions have been encountered,
 how many times, etc.
 
