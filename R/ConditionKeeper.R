@@ -114,7 +114,6 @@ ConditionKeeper <- R6::R6Class("ConditionKeeper",
         txt <- res$text[[1]][['message']]
         if (!self$thrown_enough(txt)) {
           self$add(txt)
-          # eval(parse(text = self$condition))(txt)
           switch(
             self$condition,
             message = eval(parse(text=self$condition))(txt),

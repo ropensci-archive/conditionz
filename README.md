@@ -17,7 +17,7 @@ Package API:
  - `capture_message`
  - `capture_warning`
 
-How to use functions:
+Use cases for `conditionz` functions:
 
 - `ConditionKeeper` is what you want to use if you want to keep track of conditions inside a
 function being applied many times, either in a for loop or lapply style fashion.
@@ -50,16 +50,16 @@ how many times, etc.
 x <- ConditionKeeper$new(times = 4)
 x
 #> ConditionKeeper
-#>  id: a2394c42-e64e-4940-be84-ae7846c8efe4
+#>  id: 97109d98-c21b-44c8-a242-af18e6be580e
 #>  times: 4
 #>  messages: 0
 x$get_id()
-#> [1] "a2394c42-e64e-4940-be84-ae7846c8efe4"
+#> [1] "97109d98-c21b-44c8-a242-af18e6be580e"
 x$add("one")
 x$add("two")
 x
 #> ConditionKeeper
-#>  id: a2394c42-e64e-4940-be84-ae7846c8efe4
+#>  id: 97109d98-c21b-44c8-a242-af18e6be580e
 #>  times: 4
 #>  messages: 2
 #>   one  two
@@ -151,9 +151,9 @@ microbenchmark::microbenchmark(
   times = 100
 )
 #> Unit: microseconds
-#>             expr      min        lq     mean   median       uq      max
-#>           normal  860.100  888.5415 1009.006  912.363 1038.207 2603.847
-#>  with_conditionz 1912.941 1960.9415 2162.903 2034.829 2228.555 4788.610
+#>             expr      min        lq      mean    median       uq      max
+#>           normal  856.388  891.6595  994.7487  913.0125 1000.889 2948.640
+#>  with_conditionz 1903.896 1952.2890 2158.5410 2032.0260 2278.077 3423.483
 #>  neval
 #>    100
 #>    100

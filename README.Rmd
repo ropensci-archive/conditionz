@@ -19,7 +19,7 @@ Package API:
 cat(paste(" -", paste(sprintf("`%s`", getNamespaceExports("conditionz")), collapse = "\n - ")))
 ```
 
-How to use functions:
+Use cases for `conditionz` functions:
 
 - `ConditionKeeper` is what you want to use if you want to keep track of conditions inside a
 function being applied many times, either in a for loop or lapply style fashion.
