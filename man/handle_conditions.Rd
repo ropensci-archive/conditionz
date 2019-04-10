@@ -4,7 +4,7 @@
 \alias{handle_conditions}
 \alias{handle_messages}
 \alias{handle_warnings}
-\title{handle conditions}
+\title{Handle conditions}
 \usage{
 handle_conditions(expr, condition = "message", times = 1)
 
@@ -24,7 +24,10 @@ default: 1}
 whatever the \code{expr} returns
 }
 \description{
-handle conditions
+Handle conditions
+}
+\details{
+Uses \link{ConditionKeeper} internally
 }
 \examples{
 foo <- function(x) {

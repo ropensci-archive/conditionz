@@ -66,4 +66,7 @@ x$add("one")
 x$add("two")
 x
 }
+\seealso{
+\code{\link[=handle_conditions]{handle_conditions()}}
+}
 \keyword{datasets}

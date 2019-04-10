@@ -1,14 +1,14 @@
 Package: conditionz
 Title: Control How Many Times Conditions Are Thrown
-Description: Provides ability to control how many times in an R session
-    conditions are shown to the user. Includes warnings, messages, and
-    errors.
+Description: Provides ability to control how many times in function
+    calls conditions are thrown (shown to the user). Includes control of
+    warnings and messages.
 Version: 0.0.9.9991
 Authors@R: c(
     person("Scott", "Chamberlain",
         role = c("aut", "cre"),
         email = "myrmecocystus@gmail.com",
-        comment = c(ORCID = "orcid.org/0000-0003-1444-9135")))
+        comment = c(ORCID = "0000-0003-1444-9135")))
 License: MIT + file LICENSE
 URL: https://github.com/ropenscilabs/conditionz
 BugReports: http://github.com/ropenscilabs/conditionz/issues

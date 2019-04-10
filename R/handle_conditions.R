@@ -1,7 +1,6 @@
 conditonz_env <- new.env()
-# conditonz_env <- list()
 
-#' handle conditions
+#' Handle conditions
 #' 
 #' @export
 #' @param expr an expression
@@ -9,6 +8,7 @@ conditonz_env <- new.env()
 #' @param times (integer) max. times a condition should be thrown.
 #' default: 1
 #' @return whatever the `expr` returns
+#' @details Uses [ConditionKeeper] internally
 #' @examples
 #' foo <- function(x) {
 #'   message("you gave: ", x)

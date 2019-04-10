@@ -26,6 +26,8 @@
 #' - `get_id()` - get the internal ID for the ConditionKeeper object
 #' - `handle_conditions(expr)` - pass a code block or function and handle
 #' conditions within it
+#' 
+#' @seealso [handle_conditions()]
 #'
 #' @examples
 #' x <- ConditionKeeper$new(times = 4)
