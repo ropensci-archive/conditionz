@@ -5,6 +5,8 @@ conditionz
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Build Status](https://travis-ci.com/ropenscilabs/conditionz.svg?branch=master)](https://travis-ci.com/ropenscilabs/conditionz)
+[![codecov.io](https://codecov.io/github/ropenscilabs/conditionz/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/conditionz?branch=master)
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/metacran/cranlogs.app)
 
 control how many times conditions are thrown
 
@@ -28,6 +30,15 @@ list
 
 ## Installation
 
+The CRAN version:
+
+
+```r
+install.packages("conditionz")
+```
+
+Or the development version:
+
 
 ```r
 install.packages("devtools")
@@ -50,16 +61,16 @@ how many times, etc.
 x <- ConditionKeeper$new(times = 4)
 x
 #> ConditionKeeper
-#>  id: 97109d98-c21b-44c8-a242-af18e6be580e
+#>  id: 6824b49c-be8f-4ba1-9acc-47115b6bccbb
 #>  times: 4
 #>  messages: 0
 x$get_id()
-#> [1] "97109d98-c21b-44c8-a242-af18e6be580e"
+#> [1] "6824b49c-be8f-4ba1-9acc-47115b6bccbb"
 x$add("one")
 x$add("two")
 x
 #> ConditionKeeper
-#>  id: 97109d98-c21b-44c8-a242-af18e6be580e
+#>  id: 6824b49c-be8f-4ba1-9acc-47115b6bccbb
 #>  times: 4
 #>  messages: 2
 #>   one  two
@@ -151,9 +162,9 @@ microbenchmark::microbenchmark(
   times = 100
 )
 #> Unit: microseconds
-#>             expr      min        lq      mean    median       uq      max
-#>           normal  856.388  891.6595  994.7487  913.0125 1000.889 2948.640
-#>  with_conditionz 1903.896 1952.2890 2158.5410 2032.0260 2278.077 3423.483
+#>             expr      min        lq      mean   median        uq      max
+#>           normal  857.006  874.4165  989.1222  900.992  943.1775 2796.801
+#>  with_conditionz 1906.543 1947.7495 2078.4096 1998.475 2132.5750 2729.156
 #>  neval
 #>    100
 #>    100

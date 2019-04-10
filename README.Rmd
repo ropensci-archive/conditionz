@@ -10,6 +10,8 @@ knitr::opts_chunk$set(
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Build Status](https://travis-ci.com/ropenscilabs/conditionz.svg?branch=master)](https://travis-ci.com/ropenscilabs/conditionz)
+[![codecov.io](https://codecov.io/github/ropenscilabs/conditionz/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/conditionz?branch=master)
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/metacran/cranlogs.app)
 
 control how many times conditions are thrown
 
@@ -29,6 +31,14 @@ conditions are happening within a single function or code block
 list
 
 ## Installation
+
+The CRAN version:
+
+```{r eval=FALSE}
+install.packages("conditionz")
+```
+
+Or the development version:
 
 ```{r eval=FALSE}
 install.packages("devtools")
