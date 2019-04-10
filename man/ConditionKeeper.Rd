@@ -7,6 +7,9 @@
 \arguments{
 \item{times}{(integer) number of times to throw condition. required.
 default: 1}
+
+\item{condition}{(character) which condition, one of "message" (default) or
+"warning"}
 }
 \description{
 ConditionKeeper
@@ -14,15 +17,22 @@ ConditionKeeper
 \details{
 \strong{Methods}
 \itemize{
-\item \code{add()} - xx
-\item \code{remove()} - xx
-\item \code{purge()} - xx
-\item \code{thrown_already()} - xx
-\item \code{not_thrown_yet()} - xx
-\item \code{thrown_times()} - xx
-\item \code{thrown_enough()} - xx
-\item \code{get_id()} - xx
-\item \code{handle_conditions()} - xx
+\item \code{add(x)} - add a condition to internal storage
+\item \code{remove()} - remove the first condition from internal storage; returns that
+condition so you know what you removed
+\item \code{purge()} - removes all conditions
+\item \code{thrown_already(x)} - (return: logical) has the condition been thrown
+already?
+\item \code{not_thrown_yet(x)} - (return: logical) has the condition NOT been thrown
+yet?
+\item \code{thrown_times(x)} - (return: numeric) number of times the condition
+has been thrown
+\item \code{thrown_enough(x)} - (return: logical) has the condition been thrown
+enough? "enough" being: thrown number of times equal to what you
+specified in the \code{times} parameter
+\item \code{get_id()} - get the internal ID for the ConditionKeeper object
+\item \code{handle_conditions(expr)} - pass a code block or function and handle
+conditions within it
 }
 }
 \examples{

@@ -3,20 +3,29 @@
 #' @export
 #' @param times (integer) number of times to throw condition. required.
 #' default: 1
+#' @param condition (character) which condition, one of "message" (default) or
+#' "warning"
 #' @format NULL
 #' @usage NULL
 #' @details
 #' **Methods**
 #'
-#' - `add()` - xx
-#' - `remove()` - xx
-#' - `purge()` - xx
-#' - `thrown_already()` - xx
-#' - `not_thrown_yet()` - xx
-#' - `thrown_times()` - xx
-#' - `thrown_enough()` - xx
-#' - `get_id()` - xx
-#' - `handle_conditions()` - xx
+#' - `add(x)` - add a condition to internal storage
+#' - `remove()` - remove the first condition from internal storage; returns that
+#' condition so you know what you removed
+#' - `purge()` - removes all conditions
+#' - `thrown_already(x)` - (return: logical) has the condition been thrown
+#' already?
+#' - `not_thrown_yet(x)` - (return: logical) has the condition NOT been thrown
+#' yet?
+#' - `thrown_times(x)` - (return: numeric) number of times the condition
+#' has been thrown
+#' - `thrown_enough(x)` - (return: logical) has the condition been thrown
+#' enough? "enough" being: thrown number of times equal to what you
+#' specified in the `times` parameter
+#' - `get_id()` - get the internal ID for the ConditionKeeper object
+#' - `handle_conditions(expr)` - pass a code block or function and handle
+#' conditions within it
 #'
 #' @examples
 #' x <- ConditionKeeper$new(times = 4)
@@ -86,7 +95,7 @@ ConditionKeeper <- R6::R6Class("ConditionKeeper",
       invisible(self)
     },
     remove = function() {
-      if (self$length() == 0) return(NULL)
+      if (length(self$bucket) == 0) return(NULL)
       head <- self$bucket[[1]]
       self$bucket <- self$bucket[-1]
       head
