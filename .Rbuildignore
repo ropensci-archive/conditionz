@@ -13,4 +13,3 @@ appveyor.yml
 ^codemeta\.json$
 vignettes/figure
 ^revdep$
-
