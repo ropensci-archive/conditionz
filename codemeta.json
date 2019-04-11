@@ -1,5 +1,8 @@
 {
-  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "conditionz",
   "description": "Provides ability to control how many times in function\n    calls conditions are thrown (shown to the user). Includes control of\n    warnings and messages.",
@@ -87,7 +90,10 @@
   "keywords": ["condition", "condition-control", "warning", "message", "r", "rstats", "conditions", "r-package"],
   "releaseNotes": "https://github.com/ropenscilabs/conditionz/blob/master/NEWS.md",
   "readme": "https://github.com/ropenscilabs/conditionz/blob/master/README.md",
-  "fileSize": "6.577KB",
-  "contIntegration": ["https://travis-ci.com/ropenscilabs/conditionz", "https://codecov.io/github/ropenscilabs/conditionz?branch=master"],
+  "fileSize": "6.58KB",
+  "contIntegration": [
+    "https://travis-ci.com/ropenscilabs/conditionz",
+    "https://codecov.io/github/ropenscilabs/conditionz?branch=master"
+  ],
   "developmentStatus": "https://www.repostatus.org/#wip"
 }
