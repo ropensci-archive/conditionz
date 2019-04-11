@@ -1,0 +1,93 @@
+{
+  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@type": "SoftwareSourceCode",
+  "identifier": "conditionz",
+  "description": "Provides ability to control how many times in function\n    calls conditions are thrown (shown to the user). Includes control of\n    warnings and messages.",
+  "name": "conditionz: Control How Many Times Conditions are Thrown",
+  "codeRepository": "https://github.com/ropenscilabs/conditionz",
+  "issueTracker": "http://github.com/ropenscilabs/conditionz/issues",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "0.1.0",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "version": "3.5.3",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 3.5.3 (2019-03-11)",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Scott",
+      "familyName": "Chamberlain",
+      "email": "myrmecocystus@gmail.com",
+      "@id": "https://orcid.org/0000-0003-1444-9135"
+    }
+  ],
+  "contributor": {},
+  "copyrightHolder": {},
+  "funder": {},
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Scott",
+      "familyName": "Chamberlain",
+      "email": "myrmecocystus@gmail.com",
+      "@id": "https://orcid.org/0000-0003-1444-9135"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
+    }
+  ],
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "R",
+      "name": "R",
+      "version": ">= 3.2.1"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "R6",
+      "name": "R6",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=R6"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "uuid",
+      "name": "uuid",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=uuid"
+    }
+  ],
+  "applicationCategory": "Utilities",
+  "isPartOf": "https://ropensci.org",
+  "keywords": ["condition", "condition-control", "warning", "message", "r", "rstats", "conditions", "r-package"],
+  "releaseNotes": "https://github.com/ropenscilabs/conditionz/blob/master/NEWS.md",
+  "readme": "https://github.com/ropenscilabs/conditionz/blob/master/README.md",
+  "fileSize": "6.577KB",
+  "contIntegration": ["https://travis-ci.com/ropenscilabs/conditionz", "https://codecov.io/github/ropenscilabs/conditionz?branch=master"],
+  "developmentStatus": "https://www.repostatus.org/#wip"
+}
