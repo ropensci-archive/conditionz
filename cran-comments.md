@@ -8,12 +8,7 @@
 
 0 errors | 0 warnings | 1 note
 
-* Note about license:
-License components with restrictions and base license permitting such:
-  MIT + file LICENSE
-File 'LICENSE':
-  YEAR: 2019
-  COPYRIGHT HOLDER: Scott Chamberlain
+New submission
 
 ## Reverse dependencies
 
