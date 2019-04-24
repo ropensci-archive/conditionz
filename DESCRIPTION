@@ -3,7 +3,7 @@ Title: Control How Many Times Conditions are Thrown
 Description: Provides ability to control how many times in function
     calls conditions are thrown (shown to the user). Includes control of
     warnings and messages.
-Version: 0.1.0
+Version: 0.1.0.9100
 Authors@R: c(
     person("Scott", "Chamberlain",
         role = c("aut", "cre"),
