@@ -5,9 +5,6 @@
 \alias{conditionz-package}
 \alias{conditionz}
 \title{condition control}
-\description{
-condition control
-}
 \author{
 Scott Chamberlain \href{mailto:myrmecocystus@gmail.com}{myrmecocystus@gmail.com}
 }
