@@ -1,12 +1,12 @@
 language: r
-sudo: false
 cache: packages
 dist: trusty
+os: linux
 
 r_binary_packages:
 - covr
 
-matrix:
+jobs:
   include:
     - os: linux
       r: release
