@@ -12,7 +12,3 @@
 * Make your changes (bonus points for making changes on a new feature branch)
 * Push up to your account
 * Submit a pull request to home base at `ropenscilabs/conditionz`
-
-### Also, check out our [discussion forum](https://discuss.ropensci.org)
-
-### Prefer to Email? Get in touch: [myrmecocystus@gmail.com](mailto:myrmecocystus@gmail.com)
