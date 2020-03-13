@@ -10,14 +10,14 @@
   "codeRepository": "https://github.com/ropenscilabs/conditionz",
   "issueTracker": "http://github.com/ropenscilabs/conditionz/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.0.9100",
+  "version": "0.1.0.92",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.5.3",
+    "version": "3.6.3",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.5.3 Patched (2019-03-11 r76409)",
+  "runtimePlatform": "R version 3.6.3 Patched (2020-02-29 r77909)",
   "author": [
     {
       "@type": "Person",
@@ -90,16 +90,14 @@
   "keywords": ["condition", "condition-control", "warning", "message", "r", "rstats", "conditions", "r-package"],
   "releaseNotes": "https://github.com/ropenscilabs/conditionz/blob/master/NEWS.md",
   "readme": "https://github.com/ropenscilabs/conditionz/blob/master/README.md",
-  "fileSize": "6.621KB",
-  "contIntegration": [
-    "https://travis-ci.com/ropenscilabs/conditionz",
-    "https://codecov.io/github/ropenscilabs/conditionz?branch=master"
-  ],
+  "fileSize": "7.225KB",
+  "contIntegration": ["https://travis-ci.com/ropenscilabs/conditionz", "https://codecov.io/github/ropenscilabs/conditionz?branch=master"],
   "developmentStatus": "https://www.repostatus.org/#wip",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
     "name": "Comprehensive R Archive Network (CRAN)",
     "url": "https://cran.r-project.org"
-  }
+  },
+  "relatedLink": "https://docs.ropensci.org/conditionz/"
 }
