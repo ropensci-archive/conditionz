@@ -4,7 +4,10 @@
 \name{conditionz-package}
 \alias{conditionz-package}
 \alias{conditionz}
-\title{condition control}
+\title{conditionz}
+\description{
+condition control
+}
 \author{
 Scott Chamberlain \href{mailto:myrmecocystus@gmail.com}{myrmecocystus@gmail.com}
 }

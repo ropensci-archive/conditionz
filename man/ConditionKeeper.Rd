@@ -4,30 +4,7 @@
 \alias{ConditionKeeper}
 \title{ConditionKeeper}
 \description{
-ConditionKeeper
-
-ConditionKeeper
-}
-\details{
-\strong{Methods}
-\itemize{
-\item \code{add(x)} - add a condition to internal storage
-\item \code{remove()} - remove the first condition from internal storage; returns that
-condition so you know what you removed
-\item \code{purge()} - removes all conditions
-\item \code{thrown_already(x)} - (return: logical) has the condition been thrown
-already?
-\item \code{not_thrown_yet(x)} - (return: logical) has the condition NOT been thrown
-yet?
-\item \code{thrown_times(x)} - (return: numeric) number of times the condition
-has been thrown
-\item \code{thrown_enough(x)} - (return: logical) has the condition been thrown
-enough? "enough" being: thrown number of times equal to what you
-specified in the \code{times} parameter
-\item \code{get_id()} - get the internal ID for the ConditionKeeper object
-\item \code{handle_conditions(expr)} - pass a code block or function and handle
-conditions within it
-}
+R6 class with methods for handling conditions
 }
 \examples{
 x <- ConditionKeeper$new(times = 4)
@@ -63,6 +40,17 @@ x
 \seealso{
 \code{\link[=handle_conditions]{handle_conditions()}}
 }
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{bucket}}{list holding conditions}
+
+\item{\code{times}}{number of times}
+
+\item{\code{condition}}{(character) type of condition, message or warning}
+}
+\if{html}{\out{</div>}}
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -84,6 +72,7 @@ x
 \if{html}{\out{<a id="method-new"></a>}}
 \if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
+Create a new \code{ConditionKeeper} object
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$new(times = 1, condition = "message")}\if{html}{\out{</div>}}
 }
@@ -94,101 +83,196 @@ x
 \item{\code{times}}{(integer) number of times to throw condition. required.
 default: 1}
 
-\item{\code{condition}}{(character) which condition, one of "message" (default) or
-"warning"}
+\item{\code{condition}}{(character) which condition, one of "message" (default)
+or "warning"}
 }
 \if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A new \code{ConditionKeeper} object
 }
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-print"></a>}}
 \if{latex}{\out{\hypertarget{method-print}{}}}
 \subsection{Method \code{print()}}{
+print method for the \code{ConditionKeeper} class
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$print(x, ...)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{self}
+
+\item{\code{...}}{ignored}
+}
+\if{html}{\out{</div>}}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-add"></a>}}
 \if{latex}{\out{\hypertarget{method-add}{}}}
 \subsection{Method \code{add()}}{
+add a condition to internal storage
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$add(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{a condition}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+self
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-remove"></a>}}
 \if{latex}{\out{\hypertarget{method-remove}{}}}
 \subsection{Method \code{remove()}}{
+remove the first condition from internal storage;
+returns that condition so you know what you removed
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$remove()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+the condition removed
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-purge"></a>}}
 \if{latex}{\out{\hypertarget{method-purge}{}}}
 \subsection{Method \code{purge()}}{
+removes all conditions
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$purge()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+NULL
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-thrown_already"></a>}}
 \if{latex}{\out{\hypertarget{method-thrown_already}{}}}
 \subsection{Method \code{thrown_already()}}{
+has the condition been thrown already?
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$thrown_already(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{a condition}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+logical
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-not_thrown_yet"></a>}}
 \if{latex}{\out{\hypertarget{method-not_thrown_yet}{}}}
 \subsection{Method \code{not_thrown_yet()}}{
+has the condition NOT been thrown yet?
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$not_thrown_yet(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{a condition}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+logical
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-thrown_times"></a>}}
 \if{latex}{\out{\hypertarget{method-thrown_times}{}}}
 \subsection{Method \code{thrown_times()}}{
+number of times the condition has been thrown
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$thrown_times(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{a condition}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+numeric
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-thrown_enough"></a>}}
 \if{latex}{\out{\hypertarget{method-thrown_enough}{}}}
 \subsection{Method \code{thrown_enough()}}{
+has the condition been thrown enough? "enough" being:
+thrown number of times equal to what you specified in the \code{times}
+parameter
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$thrown_enough(x)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{x}}{a condition}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+logical
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-get_id"></a>}}
 \if{latex}{\out{\hypertarget{method-get_id}{}}}
 \subsection{Method \code{get_id()}}{
+get the internal ID for the ConditionKeeper object
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$get_id()}\if{html}{\out{</div>}}
 }
 
+\subsection{Returns}{
+a UUID (character)
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-handle_conditions"></a>}}
 \if{latex}{\out{\hypertarget{method-handle_conditions}{}}}
 \subsection{Method \code{handle_conditions()}}{
+pass a code block or function and handle conditions
+within it
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{ConditionKeeper$handle_conditions(expr)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{expr}}{an expression}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+the result of calling the expression
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

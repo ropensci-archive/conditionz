@@ -1,34 +1,7 @@
-#' ConditionKeeper
-#' 
-#' @export
-#' @param times (integer) number of times to throw condition. required.
-#' default: 1
-#' @param condition (character) which condition, one of "message" (default) or
-#' "warning"
-#' @format NULL
-#' @usage NULL
-#' @details
-#' **Methods**
-#'
-#' - `add(x)` - add a condition to internal storage
-#' - `remove()` - remove the first condition from internal storage; returns that
-#' condition so you know what you removed
-#' - `purge()` - removes all conditions
-#' - `thrown_already(x)` - (return: logical) has the condition been thrown
-#' already?
-#' - `not_thrown_yet(x)` - (return: logical) has the condition NOT been thrown
-#' yet?
-#' - `thrown_times(x)` - (return: numeric) number of times the condition
-#' has been thrown
-#' - `thrown_enough(x)` - (return: logical) has the condition been thrown
-#' enough? "enough" being: thrown number of times equal to what you
-#' specified in the `times` parameter
-#' - `get_id()` - get the internal ID for the ConditionKeeper object
-#' - `handle_conditions(expr)` - pass a code block or function and handle
-#' conditions within it
-#' 
+#' @title ConditionKeeper
+#' @description R6 class with methods for handling conditions
+#' @export 
 #' @seealso [handle_conditions()]
-#'
 #' @examples
 #' x <- ConditionKeeper$new(times = 4)
 #' x
@@ -61,10 +34,19 @@
 #' x
 ConditionKeeper <- R6::R6Class("ConditionKeeper",
   public = list(
+    #' @field bucket list holding conditions
     bucket = NULL,
+    #' @field times number of times
     times = 1,
+    #' @field condition (character) type of condition, message or warning
     condition = "message",
     
+    #' @description Create a new `ConditionKeeper` object
+    #' @param times (integer) number of times to throw condition. required.
+    #' default: 1
+    #' @param condition (character) which condition, one of "message" (default)
+    #' or "warning"
+    #' @return A new `ConditionKeeper` object
     initialize = function(times = 1, condition = "message") {
       assert(times, c('numeric', 'integer'))
       self$times <- times
@@ -80,6 +62,9 @@ ConditionKeeper <- R6::R6Class("ConditionKeeper",
       private$id <- uuid::UUIDgenerate()
     },
     
+    #' @description print method for the `ConditionKeeper` class
+    #' @param x self
+    #' @param ... ignored
     print = function(x, ...) {
       cat('ConditionKeeper', sep = "\n")
       cat(paste0(' id: ', private$id), sep = "\n")
@@ -92,33 +77,60 @@ ConditionKeeper <- R6::R6Class("ConditionKeeper",
         }
       }
     },
+    #' @description add a condition to internal storage
+    #' @param x a condition
+    #' @return self
     add = function(x) {
       self$bucket <- c(self$bucket, x)
       invisible(self)
     },
+    #' @description remove the first condition from internal storage;
+    #' returns that condition so you know what you removed
+    #' @return the condition removed
     remove = function() {
       if (length(self$bucket) == 0) return(NULL)
       head <- self$bucket[[1]]
       self$bucket <- self$bucket[-1]
       head
     },
+    #' @description removes all conditions
+    #' @return NULL
     purge = function() {
       self$bucket <- NULL
     },
+    #' @description has the condition been thrown already?
+    #' @param x a condition
+    #' @return logical
     thrown_already = function(x) {
       x %in% self$bucket
     },
+    #' @description has the condition NOT been thrown yet?
+    #' @param x a condition
+    #' @return logical
     not_thrown_yet = function(x) {
       !self$thrown_already(x)
     },
+    #' @description number of times the condition has been thrown
+    #' @param x a condition
+    #' @return numeric
     thrown_times = function(x) {
       length(self$bucket[self$bucket %in% x])
     },
+    #' @description has the condition been thrown enough? "enough" being:
+    #' thrown number of times equal to what you specified in the `times`
+    #' parameter
+    #' @param x a condition
+    #' @return logical
     thrown_enough = function(x) {
       self$thrown_times(x) >= self$times
     },
+    #' @description get the internal ID for the ConditionKeeper object
+    #' @return a UUID (character)
     get_id = function() private$id,
-
+    #' @description pass a code block or function and handle conditions
+    #' within it
+    #' @param expr an expression 
+    #' @return the result of calling the expression
     handle_conditions = function(expr) {
       res <- capture_x(self$condition)(expr)
       if (!is.null(res$text)) {

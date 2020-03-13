@@ -1,4 +1,5 @@
-#' condition control
+#' @title conditionz
+#' @description condition control
 #'
 #' @importFrom R6 R6Class
 #' @importFrom uuid UUIDgenerate
