@@ -6,10 +6,12 @@ conditionz
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Build Status](https://travis-ci.com/ropensci/conditionz.svg?branch=master)](https://travis-ci.com/ropensci/conditionz)
 [![codecov.io](https://codecov.io/github/ropensci/conditionz/coverage.svg?branch=master)](https://codecov.io/github/ropensci/conditionz?branch=master)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/metacran/cranlogs.app)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/metacran/cranlogs.app)
 [![cran version](https://www.r-pkg.org/badges/version/conditionz)](https://cran.r-project.org/package=conditionz)
 
 control how many times conditions are thrown
+
+docs: https://ropensci.github.io/conditionz/
 
 Package API:
 
@@ -61,16 +63,16 @@ how many times, etc.
 x <- ConditionKeeper$new(times = 4)
 x
 #> ConditionKeeper
-#>  id: 5e5b4329-a45b-4f69-a50b-8501f0a67d4f
+#>  id: dd230f14-9c37-43fb-929b-717265c8705e
 #>  times: 4
 #>  messages: 0
 x$get_id()
-#> [1] "5e5b4329-a45b-4f69-a50b-8501f0a67d4f"
+#> [1] "dd230f14-9c37-43fb-929b-717265c8705e"
 x$add("one")
 x$add("two")
 x
 #> ConditionKeeper
-#>  id: 5e5b4329-a45b-4f69-a50b-8501f0a67d4f
+#>  id: dd230f14-9c37-43fb-929b-717265c8705e
 #>  times: 4
 #>  messages: 2
 #>   one  two
@@ -162,9 +164,9 @@ microbenchmark::microbenchmark(
   times = 100
 )
 #> Unit: microseconds
-#>             expr      min        lq     mean  median       uq      max neval
-#>           normal  893.984  922.2765 1015.841  943.19 1017.764 3253.552   100
-#>  with_conditionz 1706.054 1746.0175 1875.344 1792.01 1969.323 3473.764   100
+#>             expr      min        lq     mean    median       uq      max neval
+#>           normal  900.420  932.2765 1043.745  963.5145 1075.867 3172.858   100
+#>  with_conditionz 1718.597 1788.1335 1988.576 1900.0735 2075.764 3466.324   100
 ```
 
 ## Meta

@@ -11,10 +11,12 @@ knitr::opts_chunk$set(
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Build Status](https://travis-ci.com/ropensci/conditionz.svg?branch=master)](https://travis-ci.com/ropensci/conditionz)
 [![codecov.io](https://codecov.io/github/ropensci/conditionz/coverage.svg?branch=master)](https://codecov.io/github/ropensci/conditionz?branch=master)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/metacran/cranlogs.app)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/metacran/cranlogs.app)
 [![cran version](https://www.r-pkg.org/badges/version/conditionz)](https://cran.r-project.org/package=conditionz)
 
 control how many times conditions are thrown
+
+docs: https://ropensci.github.io/conditionz/
 
 Package API:
 

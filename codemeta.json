@@ -98,5 +98,5 @@
     "name": "Comprehensive R Archive Network (CRAN)",
     "url": "https://cran.r-project.org"
   },
-  "relatedLink": "https://docs.ropensci.org/conditionz/"
+  "relatedLink": ["https://docs.ropensci.org/conditionz/", "https://ropensci.github.io/conditionz/"]
 }
