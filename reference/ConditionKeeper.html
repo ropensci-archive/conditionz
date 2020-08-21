@@ -295,12 +295,12 @@ within it</p><h3>Usage</h3>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>ConditionKeeper</span>$<span class='fu'>new</span>(<span class='kw'>times</span> <span class='kw'>=</span> <span class='fl'>4</span>)
 <span class='no'>x</span></div><div class='output co'>#&gt; ConditionKeeper
-#&gt;  id: 8d8102bb-2d17-491a-9310-b5530232d089
+#&gt;  id: c179c089-3cde-4b1b-9a33-f0a2b5845248
 #&gt;  times: 4
-#&gt;  messages: 0</div><div class='input'><span class='no'>x</span>$<span class='fu'>get_id</span>()</div><div class='output co'>#&gt; [1] "8d8102bb-2d17-491a-9310-b5530232d089"</div><div class='input'><span class='no'>x</span>$<span class='fu'>add</span>(<span class='st'>"one"</span>)
+#&gt;  messages: 0</div><div class='input'><span class='no'>x</span>$<span class='fu'>get_id</span>()</div><div class='output co'>#&gt; [1] "c179c089-3cde-4b1b-9a33-f0a2b5845248"</div><div class='input'><span class='no'>x</span>$<span class='fu'>add</span>(<span class='st'>"one"</span>)
 <span class='no'>x</span>$<span class='fu'>add</span>(<span class='st'>"two"</span>)
 <span class='no'>x</span></div><div class='output co'>#&gt; ConditionKeeper
-#&gt;  id: 8d8102bb-2d17-491a-9310-b5530232d089
+#&gt;  id: c179c089-3cde-4b1b-9a33-f0a2b5845248
 #&gt;  times: 4
 #&gt;  messages: 2
 #&gt;   one  two</div><div class='input'><span class='no'>x</span>$<span class='fu'>thrown_already</span>(<span class='st'>"one"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='no'>x</span>$<span class='fu'>thrown_already</span>(<span class='st'>"bears"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='no'>x</span>$<span class='fu'>not_thrown_yet</span>(<span class='st'>"bears"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
@@ -315,12 +315,12 @@ within it</p><h3>Usage</h3>
 <span class='fu'>foo</span>(<span class='st'>'a'</span>)</div><div class='output co'>#&gt; <span class='message'>you gave: a</span></div><div class='output co'>#&gt; [1] "a"</div><div class='input'><span class='no'>x</span>$<span class='fu'><a href='handle_conditions.html'>handle_conditions</a></span>(<span class='fu'>foo</span>(<span class='st'>'a'</span>))</div><div class='output co'>#&gt; <span class='message'>you gave: a</span></div><div class='output co'>#&gt; [1] "a"</div><div class='input'>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>ConditionKeeper</span>$<span class='fu'>new</span>(<span class='kw'>times</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>condition</span> <span class='kw'>=</span> <span class='st'>"warning"</span>)
 <span class='no'>x</span></div><div class='output co'>#&gt; ConditionKeeper
-#&gt;  id: 6035f178-37b7-42b6-8d4c-5be1ae7176c5
+#&gt;  id: 7272c6b8-16a9-4b62-bdf3-870a055dd3e7
 #&gt;  times: 4
 #&gt;  messages: 0</div><div class='input'><span class='no'>x</span>$<span class='fu'>add</span>(<span class='st'>"one"</span>)
 <span class='no'>x</span>$<span class='fu'>add</span>(<span class='st'>"two"</span>)
 <span class='no'>x</span></div><div class='output co'>#&gt; ConditionKeeper
-#&gt;  id: 6035f178-37b7-42b6-8d4c-5be1ae7176c5
+#&gt;  id: 7272c6b8-16a9-4b62-bdf3-870a055dd3e7
 #&gt;  times: 4
 #&gt;  messages: 2
 #&gt;   one  two</div></pre>
