@@ -9,8 +9,8 @@ knitr::opts_chunk$set(
 ```
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-[![Build Status](https://travis-ci.com/ropenscilabs/conditionz.svg?branch=master)](https://travis-ci.com/ropenscilabs/conditionz)
-[![codecov.io](https://codecov.io/github/ropenscilabs/conditionz/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/conditionz?branch=master)
+[![Build Status](https://travis-ci.com/ropensci/conditionz.svg?branch=master)](https://travis-ci.com/ropensci/conditionz)
+[![codecov.io](https://codecov.io/github/ropensci/conditionz/coverage.svg?branch=master)](https://codecov.io/github/ropensci/conditionz?branch=master)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/metacran/cranlogs.app)
 [![cran version](https://www.r-pkg.org/badges/version/conditionz)](https://cran.r-project.org/package=conditionz)
 
@@ -42,8 +42,7 @@ install.packages("conditionz")
 Or the development version:
 
 ```{r eval=FALSE}
-install.packages("devtools")
-devtools::install_github("ropenscilabs/conditionz")
+remotes::install_github("ropensci/conditionz")
 ```
 
 ```{r}
@@ -128,7 +127,7 @@ microbenchmark::microbenchmark(
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/conditionz/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/conditionz/issues).
 * License: MIT
 * Get citation information for `conditionz` in R doing `citation(package = 'conditionz')`
 * Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.

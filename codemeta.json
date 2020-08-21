@@ -7,17 +7,16 @@
   "identifier": "conditionz",
   "description": "Provides ability to control how many times in function\n    calls conditions are thrown (shown to the user). Includes control of\n    warnings and messages.",
   "name": "conditionz: Control How Many Times Conditions are Thrown",
-  "codeRepository": "https://github.com/ropenscilabs/conditionz",
-  "issueTracker": "http://github.com/ropenscilabs/conditionz/issues",
+  "codeRepository": "https://github.com/ropensci/conditionz",
+  "issueTracker": "http://github.com/ropensci/conditionz/issues",
   "license": "https://spdx.org/licenses/MIT",
   "version": "0.1.0.92",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.3",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.3 Patched (2020-02-29 r77909)",
+  "runtimePlatform": "R version 4.0.2 Patched (2020-06-30 r78761)",
   "author": [
     {
       "@type": "Person",
@@ -88,10 +87,10 @@
   "applicationCategory": "Utilities",
   "isPartOf": "https://ropensci.org",
   "keywords": ["condition", "condition-control", "warning", "message", "r", "rstats", "conditions", "r-package"],
-  "releaseNotes": "https://github.com/ropenscilabs/conditionz/blob/master/NEWS.md",
-  "readme": "https://github.com/ropenscilabs/conditionz/blob/master/README.md",
-  "fileSize": "7.225KB",
-  "contIntegration": ["https://travis-ci.com/ropenscilabs/conditionz", "https://codecov.io/github/ropenscilabs/conditionz?branch=master"],
+  "releaseNotes": "https://github.com/ropensci/conditionz/blob/master/NEWS.md",
+  "readme": "https://github.com/ropensci/conditionz/blob/master/README.md",
+  "fileSize": "0KB",
+  "contIntegration": ["https://travis-ci.com/ropensci/conditionz", "https://codecov.io/github/ropensci/conditionz?branch=master"],
   "developmentStatus": "https://www.repostatus.org/#wip",
   "provider": {
     "@id": "https://cran.r-project.org",
