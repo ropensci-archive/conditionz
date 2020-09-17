@@ -3,10 +3,10 @@ conditionz
 
 
 
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.com/ropensci/conditionz.svg?branch=master)](https://travis-ci.com/ropensci/conditionz)
 [![codecov.io](https://codecov.io/github/ropensci/conditionz/coverage.svg?branch=master)](https://codecov.io/github/ropensci/conditionz?branch=master)
-[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/metacran/cranlogs.app)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/r-hub/cranlogs.app)
 [![cran version](https://www.r-pkg.org/badges/version/conditionz)](https://cran.r-project.org/package=conditionz)
 
 control how many times conditions are thrown
@@ -63,16 +63,16 @@ how many times, etc.
 x <- ConditionKeeper$new(times = 4)
 x
 #> ConditionKeeper
-#>  id: dd230f14-9c37-43fb-929b-717265c8705e
+#>  id: 2cd6d5bf-4f61-4afc-8486-8dac3d8d123d
 #>  times: 4
 #>  messages: 0
 x$get_id()
-#> [1] "dd230f14-9c37-43fb-929b-717265c8705e"
+#> [1] "2cd6d5bf-4f61-4afc-8486-8dac3d8d123d"
 x$add("one")
 x$add("two")
 x
 #> ConditionKeeper
-#>  id: dd230f14-9c37-43fb-929b-717265c8705e
+#>  id: 2cd6d5bf-4f61-4afc-8486-8dac3d8d123d
 #>  times: 4
 #>  messages: 2
 #>   one  two
@@ -164,9 +164,9 @@ microbenchmark::microbenchmark(
   times = 100
 )
 #> Unit: microseconds
-#>             expr      min        lq     mean    median       uq      max neval
-#>           normal  900.420  932.2765 1043.745  963.5145 1075.867 3172.858   100
-#>  with_conditionz 1718.597 1788.1335 1988.576 1900.0735 2075.764 3466.324   100
+#>             expr      min        lq     mean   median       uq      max neval
+#>           normal  898.763  998.3905 1430.924 1276.856 1749.503 5496.262   100
+#>  with_conditionz 1702.302 2050.5220 2707.691 2618.036 3272.131 4900.771   100
 ```
 
 ## Meta
@@ -174,6 +174,6 @@ microbenchmark::microbenchmark(
 * Please [report any issues or bugs](https://github.com/ropensci/conditionz/issues).
 * License: MIT
 * Get citation information for `conditionz` in R doing `citation(package = 'conditionz')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this package is released with a [Contributor Code of Conduct](https://ropensci.org/code-of-conduct/). By contributing to this project, you agree to abide by its terms.
 
 [![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
