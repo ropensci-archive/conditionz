@@ -120,18 +120,19 @@
     <p>capture condition</p>
     </div>
 
-    <pre class="usage"><span class='fu'>capture_message</span>(<span class='no'>expr</span>)
+    <pre class="usage"><span class='fu'>capture_message</span>(<span class='kw'>expr</span>)
 
-<span class='fu'>capture_warning</span>(<span class='no'>expr</span>)</pre>
+<span class='fu'>capture_warning</span>(<span class='kw'>expr</span>)</pre>
 
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>foom</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>) {
+    <pre class="examples"><div class='input'><span class='kw'>foom</span> <span class='op'>&lt;-</span> <span class='fu'>function</span>(<span class='kw'>x</span>) {
   <span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span>(<span class='st'>"its too bad"</span>)
-  <span class='fu'><a href='https://rdrr.io/r/base/function.html'>return</a></span>(<span class='no'>x</span>)
+  <span class='fu'><a href='https://rdrr.io/r/base/function.html'>return</a></span>(<span class='kw'>x</span>)
 }
-<span class='fu'>capture_message</span>(<span class='fu'>foom</span>(<span class='fl'>4</span>))</div><div class='output co'>#&gt; $value
+<span class='fu'>capture_message</span>(<span class='fu'>foom</span>(<span class='fl'>4</span>))
+</div><div class='output co'>#&gt; $value
 #&gt; [1] 4
 #&gt; 
 #&gt; $text
@@ -143,11 +144,12 @@
 #&gt; $type
 #&gt; [1] "message"
 #&gt; </div><div class='input'>
-<span class='no'>foow</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>) {
+<span class='kw'>foow</span> <span class='op'>&lt;-</span> <span class='fu'>function</span>(<span class='kw'>x</span>) {
   <span class='fu'><a href='https://rdrr.io/r/base/warning.html'>warning</a></span>(<span class='st'>"its too bad"</span>)
-  <span class='fu'><a href='https://rdrr.io/r/base/function.html'>return</a></span>(<span class='no'>x</span>)
+  <span class='fu'><a href='https://rdrr.io/r/base/function.html'>return</a></span>(<span class='kw'>x</span>)
 }
-<span class='fu'>capture_warning</span>(<span class='fu'>foow</span>(<span class='fl'>4</span>))</div><div class='output co'>#&gt; $value
+<span class='fu'>capture_warning</span>(<span class='fu'>foow</span>(<span class='fl'>4</span>))
+</div><div class='output co'>#&gt; $value
 #&gt; [1] 4
 #&gt; 
 #&gt; $text
@@ -173,7 +175,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
