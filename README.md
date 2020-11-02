@@ -4,7 +4,7 @@ conditionz
 
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Build Status](https://travis-ci.com/ropensci/conditionz.svg?branch=master)](https://travis-ci.com/ropensci/conditionz)
+[![R-check](https://github.com/ropensci/conditionz/workflows/R-check/badge.svg)](https://github.com/ropensci/conditionz/actions?query=workflow%3AR-check)
 [![codecov.io](https://codecov.io/github/ropensci/conditionz/coverage.svg?branch=master)](https://codecov.io/github/ropensci/conditionz?branch=master)
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/conditionz)](https://github.com/r-hub/cranlogs.app)
 [![cran version](https://www.r-pkg.org/badges/version/conditionz)](https://cran.r-project.org/package=conditionz)
@@ -63,16 +63,16 @@ how many times, etc.
 x <- ConditionKeeper$new(times = 4)
 x
 #> ConditionKeeper
-#>  id: 2cd6d5bf-4f61-4afc-8486-8dac3d8d123d
+#>  id: 98e020c2-e805-4da0-a369-d1939dc7c998
 #>  times: 4
 #>  messages: 0
 x$get_id()
-#> [1] "2cd6d5bf-4f61-4afc-8486-8dac3d8d123d"
+#> [1] "98e020c2-e805-4da0-a369-d1939dc7c998"
 x$add("one")
 x$add("two")
 x
 #> ConditionKeeper
-#>  id: 2cd6d5bf-4f61-4afc-8486-8dac3d8d123d
+#>  id: 98e020c2-e805-4da0-a369-d1939dc7c998
 #>  times: 4
 #>  messages: 2
 #>   one  two
@@ -164,9 +164,9 @@ microbenchmark::microbenchmark(
   times = 100
 )
 #> Unit: microseconds
-#>             expr      min        lq     mean   median       uq      max neval
-#>           normal  898.763  998.3905 1430.924 1276.856 1749.503 5496.262   100
-#>  with_conditionz 1702.302 2050.5220 2707.691 2618.036 3272.131 4900.771   100
+#>             expr      min        lq     mean    median       uq      max neval
+#>           normal  902.391  939.6685 1071.314  957.6225 1076.281 3251.181   100
+#>  with_conditionz 1719.505 1746.8675 1927.367 1788.8385 1993.597 4090.570   100
 ```
 
 ## Meta
