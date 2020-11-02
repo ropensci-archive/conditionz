@@ -296,14 +296,14 @@ within it</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#argum
     <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='va'>ConditionKeeper</span><span class='op'>$</span><span class='fu'>new</span><span class='op'>(</span>times <span class='op'>=</span> <span class='fl'>4</span><span class='op'>)</span>
 <span class='va'>x</span>
 </div><div class='output co'>#&gt; ConditionKeeper
-#&gt;  id: df796d18-737f-45eb-82ff-353c9af66776
+#&gt;  id: b45dfaff-085c-4a00-a5f8-a133ad1cee46
 #&gt;  times: 4
 #&gt;  messages: 0</div><div class='input'><span class='va'>x</span><span class='op'>$</span><span class='fu'>get_id</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] "df796d18-737f-45eb-82ff-353c9af66776"</div><div class='input'><span class='va'>x</span><span class='op'>$</span><span class='fu'>add</span><span class='op'>(</span><span class='st'>"one"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "b45dfaff-085c-4a00-a5f8-a133ad1cee46"</div><div class='input'><span class='va'>x</span><span class='op'>$</span><span class='fu'>add</span><span class='op'>(</span><span class='st'>"one"</span><span class='op'>)</span>
 <span class='va'>x</span><span class='op'>$</span><span class='fu'>add</span><span class='op'>(</span><span class='st'>"two"</span><span class='op'>)</span>
 <span class='va'>x</span>
 </div><div class='output co'>#&gt; ConditionKeeper
-#&gt;  id: df796d18-737f-45eb-82ff-353c9af66776
+#&gt;  id: b45dfaff-085c-4a00-a5f8-a133ad1cee46
 #&gt;  times: 4
 #&gt;  messages: 2
 #&gt;   one  two</div><div class='input'><span class='va'>x</span><span class='op'>$</span><span class='fu'>thrown_already</span><span class='op'>(</span><span class='st'>"one"</span><span class='op'>)</span>
@@ -327,13 +327,13 @@ within it</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#argum
 <span class='va'>x</span> <span class='op'>&lt;-</span> <span class='va'>ConditionKeeper</span><span class='op'>$</span><span class='fu'>new</span><span class='op'>(</span>times <span class='op'>=</span> <span class='fl'>4</span>, condition <span class='op'>=</span> <span class='st'>"warning"</span><span class='op'>)</span>
 <span class='va'>x</span>
 </div><div class='output co'>#&gt; ConditionKeeper
-#&gt;  id: f467d124-58e3-4e1e-9f15-b648ee170d69
+#&gt;  id: b3cb3fc9-473a-4dac-8e6d-ceefe383850b
 #&gt;  times: 4
 #&gt;  messages: 0</div><div class='input'><span class='va'>x</span><span class='op'>$</span><span class='fu'>add</span><span class='op'>(</span><span class='st'>"one"</span><span class='op'>)</span>
 <span class='va'>x</span><span class='op'>$</span><span class='fu'>add</span><span class='op'>(</span><span class='st'>"two"</span><span class='op'>)</span>
 <span class='va'>x</span>
 </div><div class='output co'>#&gt; ConditionKeeper
-#&gt;  id: f467d124-58e3-4e1e-9f15-b648ee170d69
+#&gt;  id: b3cb3fc9-473a-4dac-8e6d-ceefe383850b
 #&gt;  times: 4
 #&gt;  messages: 2
 #&gt;   one  two</div></pre>
